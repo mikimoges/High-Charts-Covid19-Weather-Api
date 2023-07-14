@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-<link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">
 
 
     <link href="https://cdnjs.cloudflare.c#ba2595/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -24,41 +24,53 @@
         <div class="col-3">
             <div id="sidebar" class="">
                 <ul class="nav flex-column">
-                    <li><div class="icon navbar-brand mt-5 pt-3" style="font-size: 23px;"><img src="images/icons8-dashboard-64.png" width="40px" class="d-inline mx-2 me-2" alt="">Dashboard</div></li>
-                    <li class="nav-item">
-                        <a class="nav-link font-monospace mt-5" id="list" href="#cont"><img width="40px" src="images/icons8-weather-64.png" alt="">Weather</a>
+                    <li>
+                        <div class="icon navbar-brand mt-5 pt-3" style="font-size: 23px;"><img
+                                src="images/icons8-dashboard-64.png" width="40px" class="d-inline mx-2 me-2"
+                                alt="">Dashboard</div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="list" href="#covid"><img width="40px" src="images/icons8-coronavirus-64.png" alt="">COVID-19</a>
+                        <a class="nav-link font-monospace mt-5" id="list" href="#cont"><img width="40px"
+                                src="images/icons8-weather-64.png" alt="">Weather</a>
                     </li>
                     <li class="nav-item">
-                        <a id="list" class="nav-link" href="#about"><img src="images/icons8-about-64.png" width="40px" alt="">About</a>
+                        <a class="nav-link" id="list" href="#covid"><img width="40px"
+                                src="images/icons8-coronavirus-64.png" alt="">COVID-19</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" id="list" href="#population"><img width="32px" src="images/group.png"> Population</a>
                     </li>
                     <li class="nav-item">
-                        <a id="list" class="nav-link" href="#help"><img src="images/icons8-help-64.png" width="40px" alt="">Help</a>
+                        <a id="list" class="nav-link" href="#about"><img src="images/icons8-about-64.png" width="40px"
+                                alt=""> About</a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a id="list" class="nav-link" href="#help"><img src="images/icons8-help-64.png" width="40px"
+                                alt="">Help</a>
+                    </li>
+
                 </ul>
-                <p class="gradient-text" style="position: relative; margin-top: 280px;">________2023_________</p>
+                <p class="gradient-text" style="position: relative; margin-top: 220px;">________2023_________</p>
             </div>
 
         </div>
 
         <div class="after-side-nav">
             <div class=" container-fluid mb-10" id="front">
-            
+
                 <h1 class="text-center text-gradient">Weather Chart</h1>
                 <div class="text-center text-white">
-                    <label for="countryInput" style="font-size: 25px;">Search for Weather Conditions in Any Country</label><br>
+                    <label for="countryInput" style="font-size: 25px;">Search for Weather Conditions in Any
+                        Country</label><br>
                     <div id="input-container">
-            
+
                         <input type="text" class="mt-4 mb-0" placeholder="Enter a country" id="countryInput">
                         <i class="bi bi-search"></i>
                     </div>
                     <br>
                     <button id="get-weather-button" onclick="getWeatherData()">Get Weather</button>
                 </div>
-            
+
             </div>
             <div class="container" id="cont">
                 <h1 class="">Weather Data</h1>
@@ -71,31 +83,32 @@
                         <div class="card-weather">
                             <div class="input-container">
                                 <input type="text" name="" style="background-color: #ccc;" id="input-card">
-                                <button id="search-card" style="background-color: #ccc;"><img src="images/icons8-search-64.png" width="30px"></button>
+                                <button id="search-card" style="background-color: #ccc;"><img
+                                        src="images/icons8-search-64.png" width="30px"></button>
                             </div>
                             <div class="icon">
                                 <img id="card-icon" src="images/clear.png" alt="">
                             </div>
-            
+
                             <div class="weather-details">
                                 <h1 class="degree-c">7°C</h1>
                                 <h2 class="city-name">New York</h2>
                                 <div class="humid-wind-col">
                                     <div class="humid-col">
                                         <img src="images/humidity3.png" alt="">
-            
+
                                         <p class="humid">50%</p>
                                         <p>Humidity</p>
                                     </div>
                                     <div class="humid-col">
                                         <img src="images/wind3.png" alt="">
-            
+
                                         <p class="wind">3.8Km/h</p>
                                         <p>Wind</p>
                                     </div>
                                 </div>
-            
-            
+
+
                             </div>
                         </div>
                         <!-- <iframe class="mt-3" width=100%
@@ -104,71 +117,85 @@
                     </div>
                 </div>
             </div>
-            
-            
-            
-            
+
+
+
+
             <div class="container" id="covid">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12 mt-5">
-                        <h1 class="ms-auto">Please select a state to view the number of COVID-19 deaths and hospitalizations.
+                        <h1 class="ms-auto">Please select a state to view the number of COVID-19 deaths and
+                            hospitalizations.
                         </h1>
-                    <select id="selectState">
-                        <option value="al">Alabama</option>
-                        <option value="ak">Alaska</option>
-                        <option value="az">Arizona</option>
-                        <option value="ar">Arkansas</option>
-                        <option value="ca">California</option>
-                        <option value="co">Colorado</option>
-                        <option value="ct">Connecticut</option>
-                        <option value="de">Delaware</option>
-                        <option value="fl">Florida</option>
-                        <option value="ga">Georgia</option>
-                        <option value="hi">Hawaii</option>
-                        <option value="id">Idaho</option>
-                        <option value="il">Illinois</option>
-                        <option value="in">Indiana</option>
-                        <option value="ia">Iowa</option>
-                        <option value="ks">Kansas</option>
-                        <option value="ky">Kentucky</option>
-                        <option value="la">Louisiana</option>
-                        <option value="me">Maine</option>
-                        <option value="md">Maryland</option>
-                        <option value="ma">Massachusetts</option>
-                        <option value="mi">Michigan</option>
-                        <option value="mn">Minnesota</option>
-                        <option value="ms">Mississippi</option>
-                        <option value="mo">Missouri</option>
-                        <option value="mt">Montana</option>
-                        <option value="ne">Nebraska</option>
-                        <option value="nv">Nevada</option>
-                        <option value="nh">New Hampshire</option>
-                        <option value="nj">New Jersey</option>
-                        <option value="nm">New Mexico</option>
-                        <option value="ny">New York</option>
-                        <option value="nc">North Carolina</option>
-                        <option value="nd">North Dakota</option>
-                        <option value="oh">Ohio</option>
-                        <option value="ok">Oklahoma</option>
-                        <option value="or">Oregon</option>
-                        <option value="pa">Pennsylvania</option>
-                        <option value="ri">Rhode Island</option>
-                        <option value="sc">South Carolina</option>
-                        <option value="sd">South Dakota</option>
-                        <option value="tn">Tennessee</option>
-                        <option value="tx">Texas</option>
-                        <option value="ut">Utah</option>
-                        <option value="vt">Vermont</option>
-                        <option value="va">Virginia</option>
-                        <option value="wa">Washington</option>
-                        <option value="wv">West Virginia</option>
-                        <option value="wi">Wisconsin</option>
-                        <option value="wy">Wyoming</option>
-                    </select>
+                        <div class="container-select">
 
-            
-            
-            
+                            <select id="selectState">
+                                <option value="al">Alabama</option>
+                                <option value="ak">Alaska</option>
+                                <option value="az">Arizona</option>
+                                <option value="ar">Arkansas</option>
+                                <option value="ca">California</option>
+                                <option value="co">Colorado</option>
+                                <option value="ct">Connecticut</option>
+                                <option value="de">Delaware</option>
+                                <option value="fl">Florida</option>
+                                <option value="ga">Georgia</option>
+                                <option value="hi">Hawaii</option>
+                                <option value="id">Idaho</option>
+                                <option value="il">Illinois</option>
+                                <option value="in">Indiana</option>
+                                <option value="ia">Iowa</option>
+                                <option value="ks">Kansas</option>
+                                <option value="ky">Kentucky</option>
+                                <option value="la">Louisiana</option>
+                                <option value="me">Maine</option>
+                                <option value="md">Maryland</option>
+                                <option value="ma">Massachusetts</option>
+                                <option value="mi">Michigan</option>
+                                <option value="mn">Minnesota</option>
+                                <option value="ms">Mississippi</option>
+                                <option value="mo">Missouri</option>
+                                <option value="mt">Montana</option>
+                                <option value="ne">Nebraska</option>
+                                <option value="nv">Nevada</option>
+                                <option value="nh">New Hampshire</option>
+                                <option value="nj">New Jersey</option>
+                                <option value="nm">New Mexico</option>
+                                <option value="ny">New York</option>
+                                <option value="nc">North Carolina</option>
+                                <option value="nd">North Dakota</option>
+                                <option value="oh">Ohio</option>
+                                <option value="ok">Oklahoma</option>
+                                <option value="or">Oregon</option>
+                                <option value="pa">Pennsylvania</option>
+                                <option value="ri">Rhode Island</option>
+                                <option value="sc">South Carolina</option>
+                                <option value="sd">South Dakota</option>
+                                <option value="tn">Tennessee</option>
+                                <option value="tx">Texas</option>
+                                <option value="ut">Utah</option>
+                                <option value="vt">Vermont</option>
+                                <option value="va">Virginia</option>
+                                <option value="wa">Washington</option>
+                                <option value="wv">West Virginia</option>
+                                <option value="wi">Wisconsin</option>
+                                <option value="wy">Wyoming</option>
+                            </select>
+                            <div class="death-hosp">
+                                <div class="death-box">
+                                    <img width="30px" src="images/Dashboard/tombstone.png" alt="">
+                                    <p id="death-Value">150897</p>
+                                </div>
+                                <div class="hosp-box">
+                                    <img width="30px" src="images/Dashboard/hospital.png" alt="">
+                                    <p id="hosp-Value">18897</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
                     </div>
                 </div>
                 <div class="row">
@@ -183,155 +210,161 @@
                     </div>
                 </div>
             </div>
-            
-            
-            
+
+
+
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <figure class="highcharts-figure">
-                            <h1 >COVID-19 and Population Data</h1>
+                            <h1>COVID-19 and Population Data</h1>
                             <div id="container"></div>
                             <p class="highcharts-description">
-                                A variation of a 3D pie chart with an inner radius added.
-                                These charts are often referred to as donut charts.
+                                These charts help visualize the progression of the pandemic over time and provide
+                                valuable insights into the spread and
+                                severity of the virus.
                             </p>
                         </figure>
                     </div>
-            
+
                     <div class="col-lg-6 pt-5">
                         <!-- <div id="map-container" class="mt-2"> -->
-            
-                            <div id="populationChartContainer"></div>
-            
+
+                        <!-- <div id="populationChartContainer"></div> -->
+
                         <!-- </div> -->
                     </div>
                 </div>
             </div>
 
-    
-    
-   
+            <div class="container">
+                <div id="populationChartContainer"></div>
+            </div>
 
 
-       <!-- <div id="heatmapChartContainer"></div> -->
 
-     <!-- <div id="map-container" class="pt-2">
+
+
+            <!-- <div id="heatmapChartContainer"></div> -->
+
+            <!-- <div id="map-container" class="pt-2">
                         <iframe width="50%"
                             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126101.82769239141!2d38.767820799999996!3d9.0013696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1685195215733!5m2!1sen!2set"
                              height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div> -->
 
-    <!-- Footer -->
-    <footer class="text-center text-lg-start  text-white" id="about">
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Get connected with us on social networks:</span>
-            </div>
-            <!-- Left -->
-
-            <!-- Right -->
-            <div>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Weather & COVID-19 Chart
-                        </h6>
-                        <p>
-                            Welcome to our Weather and COVID-19 web chart. Stay informed about the latest weather
-                            conditions and the impact of
-                            COVID-19 around the world. Explore real-time weather data, including temperature, humidity,
-                            and more for various
-                            locations.
-                        </p>
+            <!-- Footer -->
+            <footer class="text-center text-lg-start  text-white" id="about">
+                <!-- Section: Social media -->
+                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                    <!-- Left -->
+                    <div class="me-5 d-none d-lg-block">
+                        <span>Get connected with us on social networks:</span>
                     </div>
-                    <!-- Grid column -->
+                    <!-- Left -->
 
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
-                        </h6>
-                        <p>
-                            <a href="#cont" class="text-reset">Weather</a>
-                        </p>
-                        <p>
-                            <a href="#covid" class="text-reset">COVID-19</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">About</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset">Help</a>
-                        </p>
+                    <!-- Right -->
+                    <div>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="" class="me-4 text-reset">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
-                    <!-- Grid column -->
+                    <!-- Right -->
+                </section>
+                <!-- Section: Social media -->
 
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="fas fa-home me-3"></i> Addis Abeba, AA 10001, ET</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            info@example.com
-                        </p>
-                        <p><i class="fas fa-phone me-3"></i> + 251 999 567 88</p>
-                        <p><i class="fas fa-print me-3"></i> + 251 289 567 89</p>
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="fas fa-gem me-3"></i>Weather & COVID-19 Chart
+                                </h6>
+                                <p>
+                                    Welcome to our Weather and COVID-19 web chart. Stay informed about the latest
+                                    weather
+                                    conditions and the impact of
+                                    COVID-19 around the world. Explore real-time weather data, including temperature,
+                                    humidity,
+                                    and more for various
+                                    locations.
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Useful links
+                                </h6>
+                                <p>
+                                    <a href="#cont" class="text-reset">Weather</a>
+                                </p>
+                                <p>
+                                    <a href="#covid" class="text-reset">COVID-19</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">About</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Help</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                                <p><i class="fas fa-home me-3"></i> Addis Abeba, AA 10001, ET</p>
+                                <p>
+                                    <i class="fas fa-envelope me-3"></i>
+                                    info@example.com
+                                </p>
+                                <p><i class="fas fa-phone me-3"></i> + 251 999 567 88</p>
+                                <p><i class="fas fa-print me-3"></i> + 251 289 567 89</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
                     </div>
-                    <!-- Grid column -->
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2021 Copyright:
+                    <a class="text-reset fw-bold" href="#">MMMM P.L.C.</a>
                 </div>
-                <!-- Grid row -->
-            </div>
-        </section>
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="#">MMMM P.L.C.</a>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
         </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-</div>
-</div>
+    </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>

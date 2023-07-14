@@ -245,85 +245,9 @@ function createPopulationChart(data) {
   });
 }
 
-// Call the fetchData function to retrieve data and create the chart
 fetchData();
 
-// fetch(
-//   'http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json'
-// )
-//   .then(response => response.json())
-//   .then(data => {
-//     const chartData = data[1].map(item => ({
-//       country: item.country.value,
-//       population: item.value,
-//     }));
 
-//     createHeatmapChart(chartData);
-//   })
-//   .catch(error => {
-//     console.log('Error:', error);
-//   });
-
-// function createHeatmapChart(data) {
-//   Highcharts.chart('heatmapChartContainer', {
-//     chart: {
-//       type: 'heatmap',
-//       marginTop: 50,
-//       marginBottom: 80,
-//       plotBorderWidth: 1,
-//     },
-//     title: {
-//       text: 'World Population Heatmap',
-//     },
-//     xAxis: {
-//       categories: data.map(item => item.country),
-//     },
-//     yAxis: {
-//       title: {
-//         text: null,
-//       },
-//     },
-//     colorAxis: {
-//       min: 0,
-//       minColor: '#FFFFFF',
-//       maxColor: Highcharts.getOptions().colors[0],
-//     },
-//     legend: {
-//       align: 'right',
-//       layout: 'vertical',
-//       margin: 0,
-//       verticalAlign: 'top',
-//       y: 25,
-//       symbolHeight: 280,
-//     },
-//     tooltip: {
-//       formatter: function () {
-//         return (
-//           '<b>' +
-//           this.series.xAxis.categories[this.point.x] +
-//           '</b><br>' +
-//           '<b>Population: </b>' +
-//           Highcharts.numberFormat(this.point.value, 0)
-//         );
-//       },
-//     },
-//     series: [
-//       {
-//         name: 'Population',
-//         borderWidth: 1,
-//         data: data.map(item => [
-//           data.indexOf(item),
-//           0,
-//           parseInt(item.population),
-//         ]),
-//         dataLabels: {
-//           enabled: true,
-//           color: '#000000',
-//         },
-//       },
-//     ],
-//   });
-// }
 
 
 let death = 494;
@@ -334,18 +258,19 @@ selectedState.addEventListener('change', async function () {
     `https://api.covidtracking.com/v2/states/${selectedState.value}/daily.json`
   );
   let d = await resp.json();
-  death = d.data[0].outcomes.hospitalized.currently.value;
-  hospitalized = d.data[0].outcomes.death.total.value;
-   const selectedOption = selectState.options[selectState.selectedIndex];
+  hospitalized = d.data[0].outcomes.hospitalized.currently.value;
+  death = d.data[0].outcomes.death.total.value;
+   const selectedOption = selectedState.options[selectedState.selectedIndex];
    const stateText = selectedOption.textContent;
  console.log(stateText)
-  // console.log(d);
+  console.log(d);
   console.log(death);
   console.log(hospitalized);
   covid19Bystate(death, hospitalized,stateText);
 });
 function covid19Bystate(dea,hos,stateName) {
-  
+  document.getElementById('death-Value').innerHTML = dea; 
+  document.getElementById('hosp-Value').innerHTML = hos;
 
   
 
@@ -413,7 +338,7 @@ function covid19Bystate(dea,hos,stateName) {
     series: [
       {
         name: 'Covid-19',
-        data: [hos, dea],
+        data: [dea, hos],
       },
     ],
   });
